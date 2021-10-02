@@ -9,7 +9,7 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav" className="align-items-center justify-content-end">
                     <Nav>
                         <NavDropdown title="Account" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Logout</NavDropdown.Item>
+                            <NavDropdown.Item href="/login">Logout</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>

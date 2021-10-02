@@ -3,9 +3,10 @@ import NavBar from "../components/navBar"
 import Sidebar from "../components/sideBar"
 import '../../assets/css/global.css'
 import { login } from "../../services"
-import { useState,useEffect } from "react"
+import { useState, useEffect } from "react"
 import { useHistory } from "react-router"
 import axios from 'axios'
+import User from "./User"
 
 const Dashboard = () => {
     const history = useHistory()
@@ -32,19 +33,18 @@ const Dashboard = () => {
             const res = login(data)
             console.log('res ', res);
             if (res === "success") {
-                
+
             }
         }
     }
 
-  
 
     const toDashboard = () => {
         history.push('/dashboard')
     }
 
-    const fetchUser=async()=>{
-        await axios.get("https://randomuser.me/api/0.8/?results=20").then(res=>{
+    const fetchUser = async () => {
+        await axios.get("https://randomuser.me/api/0.8/?results=20").then(res => {
             console.log(res)
             setUsers(res.data.results)
         })
@@ -62,12 +62,13 @@ const Dashboard = () => {
                     <Col className="d-none d-sm-block" sm={2}>
                         <Sidebar />
                     </Col>
+                    
                     <Col sm={10}>
-                        <Row className="h-100 align-items-center justify-content-center">
-                            <Col sm={4} className="d-flex align-items-center justify-content-center">
-                                Hello Welcome
-                            </Col>
-                        </Row>
+                    <h5>List Of Users</h5>
+                        {users.length && users.map((item, index) => 
+                        <Row >
+                            <User data={item.user.name.first}/>
+                        </Row>)}
                     </Col>
                 </Row>
             </Container>

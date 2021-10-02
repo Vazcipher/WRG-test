@@ -43,10 +43,12 @@ const SignIn = () => {
             <NavBar />
             <Container fluid className="h-75">
                 <Row className="h-100">
-
-                    <Col sm={12}>
+                    <Col xs={12} sm={5} md={5}>
+                        <img className="loginImage" src="https://shoutcommunications.co.uk/wp-content/uploads/2016/07/animated.png"></img>
+                    </Col>
+                    <Col sm={12} sm={5} md={5}>
                         <Row className="h-100 align-items-center justify-content-center">
-                            <Col sm={4} className="d-flex align-items-center justify-content-center">
+                            <Col  >
                                 <Form onSubmit={(e) => handleLogin(e)}>
                                     <Form.Group className="mb-3" controlId="username">
                                         <Form.Label>Username</Form.Label>
@@ -58,7 +60,7 @@ const SignIn = () => {
                                         <Form.Control onChange={(e) => handleChange(e)} type="password" placeholder="Password" />
                                     </Form.Group>
                                     <Button variant="primary" type="submit">
-                                        Submit
+                                        Login
                                     </Button>
                                 </Form>
                             </Col>

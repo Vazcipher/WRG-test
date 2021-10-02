@@ -1,5 +1,6 @@
 import Credentials from "../constants/credentials.json"
 
+
 export const isLogin = () => {
     if (localStorage.getItem('access')) {
         return true;
@@ -27,3 +28,10 @@ export const login = (data) => {
     }
 
 }
+
+// export const fetchUser=async()=>{
+//     await axios.get("https://randomuser.me/api/0.8/?results=20").then(res=>{
+//             console.log(res)
+//             setUsers(res.data.results)
+//         })
+// }

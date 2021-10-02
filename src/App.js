@@ -3,11 +3,10 @@ import { BrowserRouter, Switch, Redirect } from 'react-router-dom';
 import PrivateRoute from './routes/privateRoutes';
 import PublicRoute from './routes/publicRoutes';
 
-
-import logo from './logo.svg';
 import './App.css';
 import SignIn from './views/pages/signIn';
 import Dashboard from './views/pages/dashboard';
+import AddUser from './views/pages/AddUser';
 
 function App() {
   return (
@@ -21,6 +20,7 @@ function App() {
           <Dashboard />
         </PrivateRoute>
         <Redirect from="*" to="/signin" />
+        <Redirect from="*" to="/adduser" component={AddUser} />
       </Switch>
     </BrowserRouter>
   );

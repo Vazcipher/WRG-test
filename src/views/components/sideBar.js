@@ -2,6 +2,7 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import { withRouter } from "react-router";
 import '../../assets/css/global.css'
+import {Link} from 'react-router-dom'
 
 const Side = () => {
 
