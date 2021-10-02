@@ -19,15 +19,15 @@ const Dashboard = () => {
     const [search, setSearch] = useState("")
 
 
-    console.log(search);
-    console.log(users[0]);
+    // console.log(search);
+    // console.log(users[0]);
     const handleChange = (e) => {
         setCredentials({
             ...credentials,
             [e.target.id]: e.target.value,
         })
     }
-    console.log(users)
+    // console.log(users[0].user.name.first)
     const handleLogin = (e) => {
         e.preventDefault();
         if (credentials.username !== '' && credentials.password !== '') {
@@ -51,7 +51,7 @@ const Dashboard = () => {
     const fetchUser = async () => {
         await axios.get("https://randomuser.me/api/0.8/?results=20").then(res => {
             console.log(res)
-            window.localStorage.setItem("Users", JSON.stringify(res.data.results))
+            window.localStorage.setItem("Users",JSON.stringify(res.data.results))
             setUsers(res.data.results)
         })
     }
