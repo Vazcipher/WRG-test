@@ -19,8 +19,11 @@ function App() {
           path="/dashboard" exact>
           <Dashboard />
         </PrivateRoute>
+        <PrivateRoute path="/adduser">
+          <AddUser />
+        </PrivateRoute>
         <Redirect from="*" to="/signin" />
-        <Redirect from="*" to="/adduser" component={AddUser} />
+        {/* <Redirect to="/adduser" component={AddUser} /> */}
       </Switch>
     </BrowserRouter>
   );
