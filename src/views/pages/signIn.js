@@ -35,6 +35,9 @@ const SignIn = () => {
             if (res === "success") {
                 toDashboard()
             }
+            else{
+                alert("Incorrect User name or Password")
+            }
         }
     }
 
